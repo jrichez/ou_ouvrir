@@ -9,6 +9,11 @@ export const metadata: Metadata = {
       process.env.NEXT_PUBLIC_SITE_URL ||
         "https://www.ouvrir-un-restaurant.fr"
     ),
+    
+    verification: {
+    google: "pAeV1kmMHRbluFZOjpO7KYlpowu7jzjxm8Edl91u62w",
+  },
+  
 
   title: {
     default: "Ouvrir un Restaurant",
