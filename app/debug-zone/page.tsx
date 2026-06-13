@@ -1,5 +1,7 @@
 ﻿"use client";
 
+import { DebugZoneMap } from "@/components/map/DebugZoneMap";
+
 import { useState } from "react";
 
 type ZonePreviewResponse = {
@@ -173,6 +175,19 @@ export default function DebugZonePage() {
               marginBottom: 24,
             }}
           >
+          
+          <section style={{ marginBottom: 24 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>
+            Carte
+          </h2>
+
+          <DebugZoneMap
+            lat={Number(lat)}
+            lon={Number(lon)}
+            rawZone={result.layers.raw_zone as GeoJSON.Feature<GeoJSON.Geometry>}
+          />
+        </section>
+          
             <StatCard
               label="Surface brute"
               value={`${result.stats.raw_area_km2} km²`}
