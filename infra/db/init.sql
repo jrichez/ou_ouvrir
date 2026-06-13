@@ -4,12 +4,23 @@ CREATE TABLE IF NOT EXISTS communes (
   id SERIAL PRIMARY KEY,
   code_insee TEXT,
   nom TEXT,
+  population INTEGER,
+  statut TEXT,
+  source TEXT,
+  source_year INTEGER,
+  source_date DATE,
   geom geometry(MultiPolygon, 2154)
 );
 
 CREATE INDEX IF NOT EXISTS communes_geom_idx
 ON communes
 USING GIST (geom);
+
+CREATE INDEX IF NOT EXISTS communes_code_insee_idx
+ON communes (code_insee);
+
+CREATE INDEX IF NOT EXISTS communes_source_year_idx
+ON communes (source_year);
 
 CREATE TABLE IF NOT EXISTS exclusion_zones (
   id SERIAL PRIMARY KEY,

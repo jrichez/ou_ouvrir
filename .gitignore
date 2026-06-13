@@ -40,3 +40,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Données géographiques locales lourdes / sources brutes
+geo-data/raw/communes/*
+!geo-data/raw/communes/.gitkeep
+
+geo-data/raw/exclusions/*
+!geo-data/raw/exclusions/.gitkeep
+
+geo-data/processed/*
+!geo-data/processed/.gitkeep
